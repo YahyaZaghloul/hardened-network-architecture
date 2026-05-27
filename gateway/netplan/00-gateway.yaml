@@ -1,0 +1,23 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    # ens33 (enp2s1) — Internal LAN (VMnet2) — 192.168.10.0/24
+    ens33:
+      addresses:
+        - 192.168.10.1/24
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+
+    # ens34 (enp2s2) — DMZ (VMnet3) — 192.168.20.0/24
+    ens34:
+      addresses:
+        - 192.168.20.1/24
+
+    # ens39 (enp2s7) — External WAN (VMnet4) — 200.168.1.0/24
+    ens39:
+      addresses:
+        - 200.168.1.1/24
+      routes:
+        - to: default
+          via: 200.168.1.1

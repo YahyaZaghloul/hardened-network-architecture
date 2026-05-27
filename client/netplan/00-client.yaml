@@ -1,0 +1,13 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    # ens33 (enp2s1) — Internal LAN (VMnet2)
+    ens33:
+      addresses:
+        - 192.168.10.10/24
+      routes:
+        - to: default
+          via: 192.168.10.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]

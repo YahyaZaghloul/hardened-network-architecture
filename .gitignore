@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Temp / extracted files
+*.tmp
+extracted_pdf*.txt
+
+# SSL keys (never commit real private keys)
+*.key
+*.pem
